@@ -5,8 +5,9 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-class DefaultController extends AbstractController
+class PedidosController extends AbstractController
 {
     // ...
 
@@ -14,6 +15,6 @@ class DefaultController extends AbstractController
     {
 
         // the template path is the relative file path from `templates/`
-        return $this->render('home/index.html.twig', []);
+        return $this->render('pedidos/index.html.twig', []);
     }
 }

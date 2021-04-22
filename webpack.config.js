@@ -14,16 +14,16 @@ Encore
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
+    .copyFiles({from: './assets/images', to: 'images/[path][name].[ext]'})
+
     /*
      * ENTRY CONFIG
      *
      * Each entry will result in one JavaScript file (e.g. app.js)
-     * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
+     * and one CSS file (e.g. app.scss) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/app.js')
-
-    // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
-    .enableStimulusBridge('./assets/controllers.json')
+    .addEntry('app', './assets/js/entry-points/app.js')
+    .addEntry('home', './assets/js/entry-points/home.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -31,6 +31,7 @@ Encore
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
+
 
     /*
      * FEATURE CONFIG
@@ -56,7 +57,7 @@ Encore
     })
 
     // enables Sass/SCSS support
-    //.enableSassLoader()
+    .enableSassLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
