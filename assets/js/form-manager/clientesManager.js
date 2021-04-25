@@ -4,7 +4,10 @@ import { datatablesHandler } from '../datatables/datatablesHandler'
 
 export class clientesManager {
 
-    static newClienteBridge(){
+    /**
+     * New Client creation
+     */
+    static newClienteBridge() {
         let nombre = document.getElementById("newClientNameInput");
 
         Cliente.newCliente({nombre: nombre.value}).then(response  => {
@@ -16,7 +19,10 @@ export class clientesManager {
         });
     }
 
-    static getClientesBridge(){
+    /**
+     * Get all Clients
+     */
+    static getClientesBridge() {
         Cliente.getClientes().then(response  => {
             datatablesHandler.updateClientesTable(response.data);
             clientesManager.updateClientePedidoSelector(response.data);
@@ -25,7 +31,10 @@ export class clientesManager {
         });
     }
 
-    static updateClienteBridge(){
+    /**
+     * Update existing Client
+     */
+    static updateClienteBridge() {
         let selector = document.getElementById("editClienteSelect");
         let optionSel= selector.options[selector.selectedIndex];
 
@@ -40,6 +49,10 @@ export class clientesManager {
         });
     }
 
+    /**
+     * Update edit select section that contains list of clients
+     * @param data
+     */
     static updateClientePedidoSelector(data) {
         let clientSelect = document.getElementById("editClienteSelect");
         let pedidoSelect = document.getElementById("newPedidoClientSelect");

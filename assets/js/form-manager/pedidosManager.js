@@ -4,7 +4,10 @@ import { datatablesHandler } from '../datatables/datatablesHandler'
 
 export class pedidosManager {
 
-    static newPedidoBridge(){
+    /**
+     * New Pedido creation
+     */
+    static newPedidoBridge() {
         let selector = document.getElementById("newPedidoClientSelect");
         let optionSel= selector.options[selector.selectedIndex];
         let idCliente = optionSel.getAttribute("cliId");
@@ -20,7 +23,10 @@ export class pedidosManager {
         });
     }
 
-    static getPedidosBridge(){
+    /**
+     * Get all Pedidos
+     */
+    static getPedidosBridge() {
         Pedido.getPedidos().then(response  => {
             datatablesHandler.updatePedidosTable(response.data);
             pedidosManager.updatePedidoSelector(response.data);
@@ -29,7 +35,10 @@ export class pedidosManager {
         });
     }
 
-    static updatePedidoBridge(){
+    /**
+     * Update existing Pedido
+     */
+    static updatePedidoBridge() {
         let selector = document.getElementById("editPedidoSelect");
         let optionSel= selector.options[selector.selectedIndex];
 
@@ -44,6 +53,10 @@ export class pedidosManager {
         });
     }
 
+    /**
+     * Update edit select section that contains list of pedidos
+     * @param data
+     */
     static updatePedidoSelector(data) {
         let select = document.getElementById("editPedidoSelect");
         select.innerHTML = "";

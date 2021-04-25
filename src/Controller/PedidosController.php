@@ -1,13 +1,11 @@
 <?php
 
-// src/Controller/DefaultController.php
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use \Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
 use DateTime;
 use DateTimeZone;
 use App\Entity\Cliente;
@@ -16,14 +14,21 @@ use App\Entity\Producto;
 
 class PedidosController extends AbstractController
 {
-    // ...
 
+    /**
+     * @return Response
+     */
     public function index(): Response
     {
 
         return $this->render('pedidos/index.html.twig', []);
     }
 
+    /**
+     * New client
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function newCliente(Request $request)
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -40,6 +45,10 @@ class PedidosController extends AbstractController
         ]);
     }
 
+    /**
+     * Get all clients
+     * @return JsonResponse
+     */
     public function getClientes()
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -57,6 +66,11 @@ class PedidosController extends AbstractController
         return new JsonResponse($result);
     }
 
+    /**
+     * Update existing client
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function updateCliente(Request $request)
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -79,10 +93,11 @@ class PedidosController extends AbstractController
         ]);
     }
 
-
-
-
-
+    /**
+     * New product
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function newProducto(Request $request)
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -101,6 +116,10 @@ class PedidosController extends AbstractController
         ]);
     }
 
+    /**
+     * Get all productos
+     * @return JsonResponse
+     */
     public function getProductos()
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -119,6 +138,11 @@ class PedidosController extends AbstractController
         return new JsonResponse($result);
     }
 
+    /**
+     * Update existing producto
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function updateProducto(Request $request)
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -143,10 +167,12 @@ class PedidosController extends AbstractController
         ]);
     }
 
-
-
-
-
+    /**
+     * New pedido
+     * @param Request $request
+     * @return JsonResponse
+     * @throws \Exception
+     */
     public function newPedido(Request $request)
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -175,6 +201,10 @@ class PedidosController extends AbstractController
         ]);
     }
 
+    /**
+     * Get all pedidos
+     * @return JsonResponse
+     */
     public function getPedidos()
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -196,6 +226,11 @@ class PedidosController extends AbstractController
         return new JsonResponse($result);
     }
 
+    /**
+     * Update existing pedido
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function updatePedido(Request $request)
     {
         $entityManager = $this->getDoctrine()->getManager();

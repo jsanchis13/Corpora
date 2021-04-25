@@ -1,6 +1,3 @@
-import { Cliente } from '../requests/cliente'
-import { Pedido } from '../requests/pedido'
-
 import { productosManager } from '../form-manager/productosManager'
 import { clientesManager } from '../form-manager/clientesManager'
 import { pedidosManager } from '../form-manager/pedidosManager'
@@ -11,9 +8,9 @@ window.onload = function() {
     productosManager.getProductosBridge();
     clientesManager.getClientesBridge();
     pedidosManager.getPedidosBridge();
-    /*
+    /**
      * Adding app listeners
-     */
+     **/
     document.getElementById("btnNewProduct").addEventListener("click", productosManager.newProductoBridge, false);
     document.getElementById("btnEditProduct").addEventListener("click", productosManager.updateProductoBridge, false);
 

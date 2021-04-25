@@ -7,7 +7,11 @@ export class datatablesHandler {
     static clientsTable = new DataTable("#clientsTable",{searchable: false,perPageSelect: false});
     static pedidosTable = new DataTable("#pedidosTable",{searchable: false,perPageSelect: false});
 
-    static updateProductosTable(newRows){
+    /**
+     * Update datatable from Productos APi data
+     * @param newRows
+     */
+    static updateProductosTable(newRows) {
         datatablesHandler.productsTable.destroy();
         datatablesHandler.productsTable.init();
         let arrayTable = [];
@@ -17,7 +21,11 @@ export class datatablesHandler {
         datatablesHandler.productsTable.rows().add(arrayTable);
     }
 
-    static updateClientesTable(newRows){
+    /**
+     * Update datatable from Clientes APi data
+     * @param newRows
+     */
+    static updateClientesTable(newRows) {
         datatablesHandler.clientsTable.destroy();
         datatablesHandler.clientsTable.init();
         let arrayTable = [];
@@ -27,7 +35,11 @@ export class datatablesHandler {
         datatablesHandler.clientsTable.rows().add(arrayTable);
     }
 
-    static updatePedidosTable(newRows){
+    /**
+     * Update datatable from Pedidos APi data
+     * @param newRows
+     */
+    static updatePedidosTable(newRows) {
         datatablesHandler.pedidosTable.destroy();
         datatablesHandler.pedidosTable.init();
 

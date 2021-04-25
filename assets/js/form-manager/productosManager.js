@@ -4,7 +4,10 @@ import { datatablesHandler } from '../datatables/datatablesHandler'
 
 export class productosManager {
 
-    static newProductoBridge(){
+    /**
+     * New Product creation
+     */
+    static newProductoBridge() {
         let nombre = document.getElementById("newProductoNameInput");
         let precio = document.getElementById("newProductoPriceInput");
 
@@ -18,7 +21,10 @@ export class productosManager {
         });
     }
 
-    static getProductosBridge(){
+    /**
+     * Get all Products
+     */
+    static getProductosBridge() {
         Producto.getProductos().then(response  => {
             datatablesHandler.updateProductosTable(response.data);
             productosManager.updateProdocuctoSelector(response.data);
@@ -27,7 +33,10 @@ export class productosManager {
         });
     }
 
-    static updateProductoBridge(){
+    /**
+     * Update existing product
+     */
+    static updateProductoBridge() {
         let selector = document.getElementById("editProductoSelect");
         let optionSel= selector.options[selector.selectedIndex];
 
@@ -44,6 +53,11 @@ export class productosManager {
         });
     }
 
+
+    /**
+     * Update edit select section that contains list of products
+     * @param data
+     */
     static updateProdocuctoSelector(data) {
         let select = document.getElementById("editProductoSelect");
         select.innerHTML = "";
