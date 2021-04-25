@@ -2,18 +2,54 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+        <title>{% block title %}Corpora{% endblock %}</title>
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="c-app">
+    {% block body %}
+        <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-md-show c-sidebar-unfoldable" id="sidebar">
+            <div class="c-sidebar-brand d-md-down-none" style="text-align: center;">
+                <a href="{{ url('index') }}">
+                    <img src="{{ asset('build/images/corporaLogo.png') }}" style="max-width: 50px" />
+                </a>
+            </div>
+            <ul class="c-sidebar-nav">
+                <li class="c-sidebar-nav-item">
+                    <a class="c-sidebar-nav-link {{ app.request.get('_route') == 'misPedidos' ? 'c-active' }}" href="{{ path('misPedidos') }}">
+                        <svg class="c-sidebar-nav-icon">
+                            <use xlink:href="{{ asset('build/images/free.svg#cil-transfer') }}"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="c-wrapper">
+            <header class="c-header c-header-light c-header-fixed">
+                <div class="row">
+                    <div class="col-10">
+                        <a class="c-header-brand d-lg-none c-header-brand-sm-up-center" href="#">
+                            <svg width="118" height="46" alt="CoreUI Logo">
+                                <use xlink:href="{{ asset('build/images/corporaLogo.png') }}"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <div class="c-body">
+                <main class="c-main">
+                    {% block main %}
+                    {% endblock %}
+                </main>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
     </body>
 </html>
