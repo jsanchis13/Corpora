@@ -58,7 +58,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select></select>
+                                        <select id="editProductoSelect"></select>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-sm btn-primary">Crear</button>
+                            <button class="btn btn-sm btn-primary" id="btnNewClient">Crear</button>
                         </div>
                     </div>
                 </div>
@@ -126,14 +126,14 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <select></select><br/>
+                                        <select id="editClienteSelect"></select>
                                         <input class="form-control mt-2" id="editClientNameInput" type="text" placeholder="Nuevo Nombre del Cliente">
                                     </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-sm btn-primary">Editar</button>
+                        <button class="btn btn-sm btn-primary" id="btnEditClient">Editar</button>
                     </div>
                 </div>
                 </div>
@@ -148,25 +148,22 @@
                         <div class="card-header"><strong>Nuevo Pedido</strong></div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select></select>
+                                        <select id="newPedidoClientSelect"></select>
                                     </div>
                                 </div>
-                                <div class="col-sm-5">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input class="form-control" id="datePedido" type="date" placeholder="Fecha Pedido">
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group">
-                                        <input class="form-control" id="precioPedido" placeholder="Precio €">
+                                        <input class="form-control" id="newPedidoPriceInput" type="text" placeholder="Precio del Pedido €">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-sm btn-primary">Crear</button>
+                            <button class="btn btn-sm btn-primary" id="btnNewPedido">Crear</button>
                         </div>
                     </div>
                 </div>
@@ -174,7 +171,7 @@
                     <div class="card">
                         <div class="card-header"><strong>Listado de Pedidos</strong></div>
                         <div class="card-body">
-                            <table id="productsTable" class="table table-striped table-bordered nowrap" style="width:100%">
+                            <table id="pedidosTable" class="table table-striped table-bordered nowrap" style="width:100%">
                                 <thead>
                                 <tr>
                                     <th>Id</th>
@@ -194,17 +191,12 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select></select>
+                                        <select id="editPedidoSelect"></select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control" id="editPedidoDateInput" type="date" placeholder="Fecha Pedido">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="form-group">
                                         <input class="form-control" id="editPedidoPriceInput" type="text" placeholder="Nuevo Precio del Pedido €">
                                     </div>
@@ -212,7 +204,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-sm btn-primary" id="btnEditProduct">Editar</button>
+                            <button class="btn btn-sm btn-primary" id="btnEditPedido">Editar</button>
                         </div>
                     </div>
                 </div>

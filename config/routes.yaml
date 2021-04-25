@@ -5,3 +5,52 @@ index:
 misPedidos:
   path: /misPedidos
   controller: App\Controller\PedidosController::index
+
+
+
+getClientes:
+  path: /getClientes
+  methods: GET
+  controller: App\Controller\PedidosController::getClientes
+
+newCliente:
+  path: /newCliente
+  methods: GET
+  controller: App\Controller\PedidosController::newCliente
+
+updateCliente:
+  path: /updateCliente
+  methods: GET
+  controller: App\Controller\PedidosController::updateCliente
+
+
+getPedidos:
+  path: /getPedidos
+  methods: GET
+  controller: App\Controller\PedidosController::getPedidos
+
+newPedido:
+  path: /newPedido
+  methods: GET
+  controller: App\Controller\PedidosController::newPedido
+
+updatePedido:
+  path: /updatePedido
+  methods: GET
+  controller: App\Controller\PedidosController::updatePedido
+
+
+getProductos:
+  path: /getProductos
+  methods: GET
+  controller: App\Controller\PedidosController::getProductos
+
+newProducto:
+  path: /newProducto
+  methods: GET
+  controller: App\Controller\PedidosController::newProducto
+
+updateProducto:
+  path: /updateProducto
+  methods: GET
+  controller: App\Controller\PedidosController::updateProducto
